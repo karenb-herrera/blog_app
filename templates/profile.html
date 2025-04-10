@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block sub_content %}
+  {% if all_blogs %}
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for blog in all_blogs %}
+            <tr>
+              <td>
+                <h5><a href="/profile/{{ blog['blog_id'] }}">{{ blog['title'] }}</a></h5>
+              </td>
+              <td>
+                <a href="/edit-post/{{ blog['blog_id'] }}" class="btn btn-info">Edit</a>
+              </td>
+              <td>
+                <a href="/delete-post/{{ blog['blog_id'] }}" class="btn btn-danger">Delete</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <h3>No blogs have been written by you</h3>
+  {% endif %}
+{% endblock %}

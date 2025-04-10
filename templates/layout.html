@@ -1,0 +1,29 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+  <style>
+    body {
+      background-color: #2c2c2c;
+      color: #f1f1f1;
+    }
+  </style>
+  {{ ckeditor.load() }}
+  {{ super() }}
+{% endblock %}
+
+{% block title %}
+  Better than Twitter
+{% endblock %}
+
+{% block navbar %}
+  {% include "navbar.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="bg-dark text-light min-vh-100 py-5">
+    <div class="container">
+      {% include "messages.html" %}
+      {% block sub_content %}{% endblock %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block sub_content %}
+<div class="container my-5">
+
+  {% if blogs %}
+    {% for blog in blogs %}
+      <div class="mb-4 p-4 border rounded shadow-sm bg-light">
+        <h3>
+          <a href="/blogs/{{ blog['blog_id'] }}" class="text-decoration-none text-dark">
+            {{ blog['title'] }}
+          </a>
+        </h3>
+        <h6 class="text-muted">Written by {{ blog['author'] }}</h6>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="alert alert-info text-center">
+      <h4>No blogs have been written yet</h4>
+    </div>
+  {% endif %}
+
+</div>
+{% endblock %}

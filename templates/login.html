@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block sub_content %}
+<div class="container my-5">
+  <div class="text-center mb-4">
+    <h1>User Login</h1>
+  </div>
+
+  <form method="POST">
+    <!-- Username Field -->
+    <div class="mb-3 row">
+      <label for="username" class="col-sm-2 col-form-label">Username</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="username" name="username" required>
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="mb-3 row">
+      <label for="password" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-5">
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="row mb-3">
+      <div class="offset-sm-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

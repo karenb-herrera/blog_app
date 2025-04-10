@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Better than Twitter</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        {% if session.login %}
+        <li><a href="/posting" class="nav-link text-light">Post something</a></li>
+        <li><a href="/profile" class="nav-link text-light">Profile</a></li>
+        {% endif %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="padding:0 30px;">
+        {% if session.login %}
+        <li>
+          <a href="/logout" class="nav-link text-light">Logout</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="/login" class="nav-link text-light">Login</a>
+        </li>
+        <li>
+          <a href="/register" class="nav-link text-light">Register</a>
+        </li>
+        {% endif %}
+      </ul>
+  </nav>

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block sub_content %}
+<div class="text-center mb-4">
+  <h1>Write a New Post</h1>
+</div>
+
+<form method="POST">
+  <div class="mb-3 row">
+    <label for="title" class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-5">
+      <input type="text" name="title" id="title" class="form-control"/>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="content" class="col-sm-2 col-form-label">Content</label>
+    <div class="col-sm-5">
+      <textarea class="ckeditor form-control" name="content" id="content"></textarea>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

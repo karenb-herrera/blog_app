@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block sub_content %}
+<div class="text-center mb-4">
+  <h1>Edit Post</h1>
+</div>
+
+<form method="POST">
+  <div class="mb-3 row">
+    <label for="title" class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="title" name="title" value="{{ blog_form['title'] }}">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="content" class="col-sm-2 col-form-label">Content</label>
+    <div class="col-sm-5">
+      <textarea class="form-control ckeditor" id="content" name="content" rows="6">{{ blog_form['content'] }}</textarea>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="offset-sm-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
