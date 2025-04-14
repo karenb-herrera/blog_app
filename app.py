@@ -17,10 +17,10 @@ app.config['MYSQL_HOST'] = db['mysql_host']
 app.config['MYSQL_USER'] = db['mysql_user']
 app.config['MYSQL_PASSWORD'] = db['mysql_password']
 app.config['MYSQL_DB'] = db['mysql_db']
-app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor' #return rows as dictionary, not tuples
 mysql = MySQL(app)
 
-app.config['SECRET_KEY'] = os.urandom(24)
+app.config['SECRET_KEY'] = os.urandom(24) # to sign a cookie with a secure key of 24 bytes
 
 # Index route
 @app.route('/')
@@ -114,7 +114,7 @@ def login():
         return render_template('login.html')
 
 # Write a new post
-@app.route('/posting',methods=['GET', 'POST'])
+@app.route('/posting/',methods=['GET', 'POST'])
 def posting():
     if request.method == 'POST':
         # If the user is not logged
